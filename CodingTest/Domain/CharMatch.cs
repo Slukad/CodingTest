@@ -2,6 +2,6 @@
 
 public class CharMatch
 {
-    public string? Input { get; set; }
-    public string? SearchWord { get; set; }
+    public string Input { get; set; }
+    public string SearchWord { get; set; }
 }

@@ -1,5 +1,3 @@
-using CodingTest.Application;
-using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodingTest.Tests;
@@ -13,10 +11,7 @@ public class UnitTests
         var input = "abc";
         var search = "bca";
 
-        var manager = new CharMatchManager(NullLogger<CharMatchManager>.Instance);
-        var result = manager.StringIsSimilar(input, search);
         
-        Assert.IsTrue(result);
     }
     
     [TestMethod]
@@ -25,9 +20,6 @@ public class UnitTests
         var input = "abc";
         var search = "bcaa";
 
-        var manager = new CharMatchManager(NullLogger<CharMatchManager>.Instance);
-        var result = manager.StringIsSimilar(input, search);
-        
-        Assert.IsFalse(result);
+       
     }
 }
