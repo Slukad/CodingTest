@@ -10,7 +10,17 @@ public class CharMatchManager : ICharMatchManager
     
     public bool StringIsSimilar(string input, string search)
     {
+       
         
         return true;
     }
 }
+
+/*
+ * abc -> bca = true
+aab -> baa = true
+aab  -> abc = false
+abc -> abd = false
+abc -> abcd = false
+ab -> abab = false
+ */

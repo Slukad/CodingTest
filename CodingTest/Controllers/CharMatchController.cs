@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CodingTest.Application;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CodingTest.Controllers;
 
@@ -16,7 +17,6 @@ public class CharMatchController : ControllerBase
     [HttpGet("{input}/{search}")]
     public bool Get(string input, string search)
     {
-        
         return true;
     }
 }

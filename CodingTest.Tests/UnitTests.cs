@@ -1,3 +1,5 @@
+using CodingTest.Application;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodingTest.Tests;
@@ -11,7 +13,7 @@ public class UnitTests
         var input = "abc";
         var search = "bca";
 
-        
+       
     }
     
     [TestMethod]
@@ -22,4 +24,30 @@ public class UnitTests
 
        
     }
+   
+    [TestMethod]
+    public void TestStringAreSimilarFail2()
+    {
+        var input = "aab";
+        var search = "abc";
+
+       
+    }
+    [TestMethod]
+    public void TestStringAreSimilarFail3()
+    {
+        var input = "abc";
+        var search = "abd";
+
+       
+    }
 }
+
+/*
+ * abc -> bca = true
+aab -> baa = true
+aab  -> abc = false
+abc -> abd = false
+abc -> abcd = false
+ab -> abab = false
+ */
