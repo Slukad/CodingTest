@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CodingTest.Application;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CodingTest.Controllers;
 
@@ -7,16 +8,18 @@ namespace CodingTest.Controllers;
 public class CharMatchController : ControllerBase
 {
     private readonly ILogger<CharMatchController> _logger;
+    private readonly ICharMatchManager _charMatchManager;
 
-    public CharMatchController(ILogger<CharMatchController> logger)
+    public CharMatchController(ILogger<CharMatchController> logger, ICharMatchManager charMatchManager)
     {
         _logger = logger;
+        _charMatchManager = charMatchManager;
     }
     
     [HttpGet("{input}/{search}")]
     public bool Get(string input, string search)
     {
-        
-        return true;
+        _logger.LogInformation("Se inicia comparacion {InputString}", input);
+        return _charMatchManager.StringIsSimilar(input, search);
     }
 }
